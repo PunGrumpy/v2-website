@@ -7,14 +7,16 @@ export const GitHubContributions = () => {
   const contributions = getCachedContributions()
 
   return (
-    <div className="relative grid max-w-6xl overflow-hidden">
+    <div className="mx-auto">
       <h2 className="sr-only">GitHub Contributions</h2>
 
       <Suspense fallback={<GitHubContributionFallback />}>
-        <GitHubContributionGraph
-          contributions={contributions}
-          username="PunGrumpy"
-        />
+        <div className="mx-auto max-w-6xl">
+          <GitHubContributionGraph
+            contributions={contributions}
+            username="PunGrumpy"
+          />
+        </div>
       </Suspense>
     </div>
   )
