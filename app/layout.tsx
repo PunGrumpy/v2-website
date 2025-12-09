@@ -4,9 +4,9 @@ import { Analytics } from '@vercel/analytics/next'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { GeistMono } from 'geist/font/mono'
 import { GeistSans } from 'geist/font/sans'
-
 import { ThemeProvider } from '@/components/providers/theme'
 import { cn } from '@/lib/utils'
+import { TooltipProvider } from '@/components/ui/tooltip'
 
 interface RootLayoutProps {
   children: React.ReactNode
@@ -28,7 +28,10 @@ export default function RootLayout({ children }: RootLayoutProps) {
           enableSystem
           disableTransitionOnChange
         >
-          <div className="bg-background">{children}</div>
+          <TooltipProvider>
+            <div className="bg-background">{children}</div>
+          </TooltipProvider>
+
           <Analytics />
           <SpeedInsights />
         </ThemeProvider>
