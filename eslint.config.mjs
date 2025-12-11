@@ -1,3 +1,5 @@
+import nextTypescript from "eslint-config-next/typescript";
+import nextCoreWebVitals from "eslint-config-next/core-web-vitals";
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 
@@ -12,50 +14,45 @@ const compat = new FlatCompat({
   allConfig: js.configs.all
 })
 
-const config = [
-  {
-    ignores: [
-      'node_modules/**',
-      '.next/**',
-      'dist/**',
-      'build/**',
-      'coverage/**',
-      '*.config.js',
-      '*.config.mjs',
-      '*.config.ts',
-      'public/**',
-      '*.d.ts',
-      'components/ui/**/*.{js,jsx,ts,tsx}'
-    ]
+const config = [...nextTypescript, {
+  ignores: [
+    'node_modules/**',
+    '.next/**',
+    'dist/**',
+    'build/**',
+    'coverage/**',
+    '*.config.js',
+    '*.config.mjs',
+    '*.config.ts',
+    'public/**',
+    '*.d.ts',
+    'components/ui/**/*.{js,jsx,ts,tsx}'
+  ]
+}, ...nextCoreWebVitals, ...compat.extends("prettier"), {
+  files: ['**/*.{js,jsx,ts,tsx}'],
+  plugins: {
+    tailwindcss: (await import('eslint-plugin-tailwindcss')).default,
+    'simple-import-sort': (await import('eslint-plugin-simple-import-sort'))
+      .default
   },
-  ...compat.extends('next/core-web-vitals', 'prettier'),
-  {
-    files: ['**/*.{js,jsx,ts,tsx}'],
-    plugins: {
-      tailwindcss: (await import('eslint-plugin-tailwindcss')).default,
-      'simple-import-sort': (await import('eslint-plugin-simple-import-sort'))
-        .default
-    },
-    rules: {
-      'simple-import-sort/imports': 'warn',
-      'simple-import-sort/exports': 'warn',
-      'react-hooks/exhaustive-deps': 'error',
-      'tailwindcss/no-custom-classname': 'off',
-      'tailwindcss/classnames-order': 'off'
-    },
-    settings: {
-      tailwindcss: {
-        callees: ['cn', 'cva'],
-        config: 'tailwind.config.js'
-      }
-    }
+  rules: {
+    'simple-import-sort/imports': 'warn',
+    'simple-import-sort/exports': 'warn',
+    'react-hooks/exhaustive-deps': 'error',
+    'tailwindcss/no-custom-classname': 'off',
+    'tailwindcss/classnames-order': 'off'
   },
-  {
-    files: ['**/*.ts', '**/*.tsx'],
-    languageOptions: {
-      parser: (await import('@typescript-eslint/parser')).default
+  settings: {
+    tailwindcss: {
+      callees: ['cn', 'cva'],
+      config: 'tailwind.config.js'
     }
   }
-]
+}, {
+  files: ['**/*.ts', '**/*.tsx'],
+  languageOptions: {
+    parser: (await import('@typescript-eslint/parser')).default
+  }
+}]
 
 export default config

@@ -103,7 +103,7 @@ type BadgeVariantProps = VariantProps<typeof badgeVariants>
 export interface BadgeProps
   extends Omit<React.HTMLAttributes<HTMLDivElement>, 'color'>,
     BadgeVariantProps {
-  icon?: React.ReactElement & { props: { className?: string } }
+  icon?: React.ReactElement<any> & { props: { className?: string } }
 }
 
 function Badge({
