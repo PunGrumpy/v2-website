@@ -1,19 +1,19 @@
 import { Refractor, registerLanguage } from 'react-refractor'
-import bash from 'refractor/lang/bash'
-import css from 'refractor/lang/css'
-import graphql from 'refractor/lang/graphql'
-import java from 'refractor/lang/java'
-import js from 'refractor/lang/javascript'
-import json from 'refractor/lang/json'
-import jsx from 'refractor/lang/jsx'
-import markdown from 'refractor/lang/markdown'
-import html from 'refractor/lang/markup'
-import python from 'refractor/lang/python'
-import scss from 'refractor/lang/scss'
-import sql from 'refractor/lang/sql'
-import tsx from 'refractor/lang/tsx'
-import ts from 'refractor/lang/typescript'
-import yaml from 'refractor/lang/yaml'
+import bash from 'refractor/bash'
+import css from 'refractor/css'
+import graphql from 'refractor/graphql'
+import java from 'refractor/java'
+import js from 'refractor/javascript'
+import json from 'refractor/json'
+import jsx from 'refractor/jsx'
+import markdown from 'refractor/markdown'
+import html from 'refractor/markup'
+import python from 'refractor/python'
+import scss from 'refractor/scss'
+import sql from 'refractor/sql'
+import tsx from 'refractor/tsx'
+import ts from 'refractor/typescript'
+import yaml from 'refractor/yaml'
 
 import { Clipboard } from '@/components/sanity/clipboard'
 import { Card, CardContent, CardHeader } from '@/components/ui/card'
@@ -35,11 +35,7 @@ registerLanguage(json)
 registerLanguage(java)
 
 interface CodeBlockProps {
-  value: {
-    code: string
-    language: string
-    filename?: string | null
-  }
+  value: { code: string; language: string; filename?: string | null }
 }
 
 export const CodeBlock: React.FC<CodeBlockProps> = ({ value }) => {

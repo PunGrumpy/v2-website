@@ -1,14 +1,14 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { motion, Variants } from 'framer-motion'
 import { useEffect, useState } from 'react'
 
-const opacity = {
+const opacity: Variants = {
   initial: { opacity: 0 },
   enter: { opacity: 0.75, transition: { duration: 1, delay: 0.2 } }
 }
 
-const slideUp = {
+const slideUp: Variants = {
   initial: { top: 0 },
   exit: {
     top: '-100vh',
@@ -49,7 +49,7 @@ export const HelloLoading: React.FC = () => {
   const initialPath = `M0 0 L${dimension.width} 0 L${dimension.width} ${dimension.height} Q${dimension.width / 2} ${dimension.height + 300} 0 ${dimension.height}  L0 0`
   const targetPath = `M0 0 L${dimension.width} 0 L${dimension.width} ${dimension.height} Q${dimension.width / 2} ${dimension.height} 0 ${dimension.height}  L0 0`
 
-  const curve = {
+  const curve: Variants = {
     initial: {
       d: initialPath,
       transition: { duration: 0.7, ease: [0.76, 0, 0.24, 1] }

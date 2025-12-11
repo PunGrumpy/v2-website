@@ -1,7 +1,7 @@
 'use client'
 
 import { MoonIcon, SunIcon } from '@radix-ui/react-icons'
-import { motion } from 'framer-motion'
+import { motion, type Transition } from 'framer-motion'
 
 const iconVariants = {
   initial: { scale: 0.6, opacity: 0, rotate: -180 },
@@ -11,7 +11,7 @@ const iconVariants = {
   whileHover: { scale: 1.1 }
 }
 
-const transition = {
+const transition: Transition = {
   type: 'spring',
   stiffness: 200,
   damping: 20,
