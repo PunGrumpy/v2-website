@@ -3,8 +3,8 @@
   "version": "2.0.0",
   "private": true,
   "scripts": {
-    "build": "next build --webpack",
-    "dev": "next dev --turbo",
+    "build": "next build",
+    "dev": "next dev",
     "format": "prettier --write .",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
