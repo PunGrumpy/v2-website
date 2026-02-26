@@ -20,7 +20,7 @@ const nextConfig = {
       },
       {
         protocol: 'https',
-        hostname: 'www.pungrumpy.com'
+        hostname: 'assets.pungrumpy.com'
       }
     ]
   }
