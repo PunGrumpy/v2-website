@@ -3,7 +3,7 @@
 import { AnimatePresence, motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useEffect,useState } from 'react'
+import { useEffect, useState } from 'react'
 
 import { cn } from '@/lib/utils'
 
@@ -46,7 +46,7 @@ export const NewWorkOverlay = () => {
         rel="noopener noreferrer"
         className={cn(
           'block size-40 overflow-hidden bg-background',
-          'after:pointer-events-none after:absolute after:inset-0 after:border after:border-foreground/20'
+          'after:pointer-events-none after:absolute after:inset-0 after:rounded-lg after:border after:border-foreground/20'
         )}
       >
         <div className="relative size-full">
