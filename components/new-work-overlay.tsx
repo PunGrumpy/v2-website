@@ -44,7 +44,10 @@ export const NewWorkOverlay = () => {
         href="https://www.pungrumpy.com"
         target="_blank"
         rel="noopener noreferrer"
-        className="block size-40 overflow-hidden rounded-lg border border-border bg-background shadow-lg transition-all duration-300"
+        className={cn(
+          'block size-40 overflow-hidden bg-background',
+          'after:pointer-events-none after:absolute after:inset-0 after:border after:border-foreground/20'
+        )}
       >
         <div className="relative size-full">
           <AnimatePresence mode="popLayout">
