@@ -1,5 +1,13 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Archived version: crawlable so old links keep resolving, but not indexed
+  // in favour of the current site at www.pungrumpy.com.
+  headers: async () => [
+    {
+      source: '/:path*',
+      headers: [{ key: 'X-Robots-Tag', value: 'noindex, follow' }]
+    }
+  ],
   images: {
     remotePatterns: [
       {

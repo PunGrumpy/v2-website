@@ -24,7 +24,8 @@ export const metadata: Metadata = {
     template: `%s | ${SITE_TITLE}`
   },
   description: `${SITE_DESCRIPTION}`,
-  robots: 'follow, index',
+  // Archived version: leave indexing to www.pungrumpy.com
+  robots: 'noindex, follow',
   icons: {
     icon: [
       {
