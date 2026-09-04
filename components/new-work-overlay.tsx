@@ -8,10 +8,10 @@ import { useEffect, useState } from 'react'
 import { cn } from '@/lib/utils'
 
 const images = [
-  'https://assets.pungrumpy.com/preview/desktop-home.png',
-  'https://assets.pungrumpy.com/preview/desktop-about.png',
-  'https://assets.pungrumpy.com/preview/mobile-home.png',
-  'https://assets.pungrumpy.com/preview/mobile-about.png'
+  'https://assets.pungrumpy.com/preview/shot-1.png',
+  'https://assets.pungrumpy.com/preview/shot-2.png',
+  'https://assets.pungrumpy.com/preview/shot-3.png',
+  'https://assets.pungrumpy.com/preview/shot-4.png'
 ]
 
 const useImageRotation = (images: string[], interval: number) => {
